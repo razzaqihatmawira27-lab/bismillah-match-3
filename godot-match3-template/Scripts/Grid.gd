@@ -3,7 +3,7 @@ extends Node2D
 enum {wait, move}
 var state
 
-var total_time: int = 100
+var total_time: int = 60
 var time_left: int = total_time
 var minimum_score: int = 100
 
@@ -34,9 +34,13 @@ var score: int = 0
 
 @onready var music_player: AudioStreamPlayer = $"../MusicPlayer"
 
-var destroy_timer = Timer.new()
-var collapse_timer = Timer.new()
-var refill_timer = Timer.new()
+@onready var destroy_timer: Timer = $DestroyTimer
+@onready var collapse_timer: Timer = $CollapseTimer
+@onready var refill_timer: Timer = $RefillTimer
+
+#var destroy_timer = Timer.new()
+#var collapse_timer = Timer.new()
+#var refill_timer = Timer.new()
 
 var all_dots = []
 
@@ -53,12 +57,17 @@ var controlling = false
 
 func _ready():
 	state = move
-	setup_timers()
+	#setup_timers()
 	randomize()
 	all_dots = make_2d_array()
 	spawn_dots()
 	music_player.play()
 	music_player.connect("finished", Callable(self, "_on_music_finished"))
+	
+	# setup timer replacement
+	destroy_timer.connect("timeout", Callable(self, "destroy_matches"))
+	collapse_timer.connect("timeout", Callable(self, "collapse_columns"))
+	refill_timer.connect("timeout", Callable(self, "refill_columns"))
 	
 	score = 0
 	if score_label:
@@ -75,21 +84,21 @@ func _ready():
 func _on_music_finished():
 	music_player.play()
 
-func setup_timers():
-	destroy_timer.connect("timeout", Callable(self, "destroy_matches"))
-	destroy_timer.set_one_shot(true)
-	destroy_timer.set_wait_time(0.2)
-	add_child(destroy_timer)
+#func setup_timers():
+	#destroy_timer.connect("timeout", Callable(self, "destroy_matches"))
+	#destroy_timer.set_one_shot(true)
+	#destroy_timer.set_wait_time(0.2)
+	#add_child(destroy_timer)
 	
-	collapse_timer.connect("timeout", Callable(self, "collapse_columns"))
-	collapse_timer.set_one_shot(true)
-	collapse_timer.set_wait_time(0.2)
-	add_child(collapse_timer)
+	#collapse_timer.connect("timeout", Callable(self, "collapse_columns"))
+	#collapse_timer.set_one_shot(true)
+	#collapse_timer.set_wait_time(0.2)
+	#add_child(collapse_timer)
 
-	refill_timer.connect("timeout", Callable(self, "refill_columns"))
-	refill_timer.set_one_shot(true)
-	refill_timer.set_wait_time(0.2)
-	add_child(refill_timer)
+	#refill_timer.connect("timeout", Callable(self, "refill_columns"))
+	#refill_timer.set_one_shot(true)
+	#refill_timer.set_wait_time(0.2)
+	#add_child(refill_timer)
 	
 func restricted_fill(place):
 	if is_in_array(empty_spaces, place):
@@ -383,10 +392,6 @@ func check_win_condition() -> void:
 	music_player.stop()
 
 	if score >= minimum_score:
-		print("🎉 You win! Final Score: " + str(score))
-		if time_label:
-			time_label.text = "YOU WIN!"
+		get_tree().change_scene_to_file("res://Scenes/Win_match_3.tscn")
 	else:
-		print("💀 Game Over! You needed at least " + str(minimum_score) + " points. Final Score: " + str(score))
-		if time_label:
-			time_label.text = "GAME OVER"
+		get_tree().change_scene_to_file("res://Scenes/Game_over_match_3.tscn")

@@ -22,6 +22,18 @@ offset = 70
 y_offset = -2
 empty_spaces = PackedVector2Array(0, 0, 0, 6, 6, 6, 6, 0, 2, 3, 3, 3, 4, 3)
 
+[node name="DestroyTimer" type="Timer" parent="Grid" unique_id=955963319]
+wait_time = 0.2
+one_shot = true
+
+[node name="CollapseTimer" type="Timer" parent="Grid" unique_id=759278789]
+wait_time = 0.2
+one_shot = true
+
+[node name="RefillTimer" type="Timer" parent="Grid" unique_id=2081789345]
+wait_time = 0.2
+one_shot = true
+
 [node name="GUI" type="Control" parent="." unique_id=1730055789]
 layout_mode = 3
 anchors_preset = 0

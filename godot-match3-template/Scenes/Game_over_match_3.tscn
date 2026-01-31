@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://boudnhcdnoa14"]
+
+[ext_resource type="Texture2D" uid="uid://ur2e7xeah02n" path="res://Match3/123r.png" id="1_uhxqh"]
+[ext_resource type="FontFile" uid="uid://clb57shxr6nsr" path="res://Match3/retro.ttf" id="2_p01w8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51psv"]
+bg_color = Color(0.41981313, 0.41981313, 0.41981304, 1)
+
+[node name="GameOverMatch3" type="Control" unique_id=664330266]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=607553633]
+top_level = true
+texture_filter = 1
+scale = Vector2(3.372392, 3.5451596)
+texture = ExtResource("1_uhxqh")
+centered = false
+
+[node name="YesButton" type="Button" parent="." unique_id=906950159]
+top_level = true
+layout_mode = 0
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 456.26193
+offset_bottom = 598.64624
+scale = Vector2(0.63916284, 0.73863536)
+theme_override_fonts/font = ExtResource("2_p01w8")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_51psv")
+text = "YES"
+
+[node name="NoButton" type="Button" parent="." unique_id=169402046]
+top_level = true
+layout_mode = 0
+offset_left = 702.99994
+offset_top = 512.0
+offset_right = 903.26184
+offset_bottom = 598.64624
+scale = Vector2(0.63916284, 0.73863536)
+theme_override_fonts/font = ExtResource("2_p01w8")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_51psv")
+text = "NO"

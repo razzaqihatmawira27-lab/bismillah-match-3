@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://uoideir0vs6k"]
+
+[ext_resource type="Texture2D" uid="uid://dofl1csmctwgg" path="res://Match3/victory desain2.png" id="1_4io76"]
+
+[node name="WinMatch3" type="Control" unique_id=1450901246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1944841936]
+texture_filter = 1
+scale = Vector2(3.4, 3.5555556)
+texture = ExtResource("1_4io76")
+centered = false

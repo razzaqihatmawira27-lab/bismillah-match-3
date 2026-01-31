@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://ynpouyser6kn"]
+
+[ext_resource type="Texture2D" uid="uid://b6vju6uw8gm5m" path="res://Match3/village desain.png" id="1_0064t"]
+[ext_resource type="Script" uid="uid://cv0fqlt0irutt" path="res://Scripts/Grid.gd" id="2_5d2xa"]
+[ext_resource type="FontFile" uid="uid://clb57shxr6nsr" path="res://Match3/retro.ttf" id="3_of5jf"]
+[ext_resource type="AudioStream" uid="uid://cek5gabrsrqsw" path="res://Match3/Scene 2 Desa_[cut_35sec].ogg" id="4_lv5y3"]
+
+[node name="Game_match3" type="Node" unique_id=834566244]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=721458245]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("1_0064t")
+expand_mode = 2
+
+[node name="Grid" type="Node2D" parent="." unique_id=1870006946]
+script = ExtResource("2_5d2xa")
+width = 7
+height = 7
+offset = 70
+y_offset = -2
+empty_spaces = PackedVector2Array(0, 0, 0, 6, 6, 6, 6, 0, 2, 3, 3, 3, 4, 3)
+
+[node name="GUI" type="Control" parent="." unique_id=1730055789]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="score_label" type="Label" parent="GUI" unique_id=107518475]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 576.0
+offset_right = 281.0
+offset_bottom = 631.0
+theme_override_fonts/font = ExtResource("3_of5jf")
+theme_override_font_sizes/font_size = 40
+text = "SCORE: 100"
+
+[node name="time_label" type="Label" parent="GUI" unique_id=777945617]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 576.0
+offset_right = 1024.0
+offset_bottom = 627.0
+theme_override_fonts/font = ExtResource("3_of5jf")
+theme_override_font_sizes/font_size = 40
+text = "TIME: 100"
+
+[node name="GameTimer" type="Timer" parent="." unique_id=1441804253]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=2088586189]
+stream = ExtResource("4_lv5y3")
+autoplay = true

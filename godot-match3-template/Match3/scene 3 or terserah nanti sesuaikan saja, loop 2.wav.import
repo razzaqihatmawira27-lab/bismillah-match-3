@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wp3uo3ydo5rf"
+path="res://.godot/imported/scene 3 or terserah nanti sesuaikan saja, loop 2.wav-fa599cbd72c4c6bcb59f60943b5a91f2.sample"
+
+[deps]
+
+source_file="res://Match3/scene 3 or terserah nanti sesuaikan saja, loop 2.wav"
+dest_files=["res://.godot/imported/scene 3 or terserah nanti sesuaikan saja, loop 2.wav-fa599cbd72c4c6bcb59f60943b5a91f2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

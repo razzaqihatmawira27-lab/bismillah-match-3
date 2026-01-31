@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dg8faho6jm1ry"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bw38d7ggl5hey" path="res://Match3/angin.png" id="2_jj1q7"]
+
+[node name="blue_dot" unique_id=1164531202 instance=ExtResource("2")]
+color = "blue"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_jj1q7")

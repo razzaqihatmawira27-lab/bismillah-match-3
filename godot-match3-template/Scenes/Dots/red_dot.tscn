@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://boj6p0p71e4h8"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://cmo8pd2rwlxof" path="res://Match3/api.png" id="2_cvlyw"]
+
+[node name="red_dot" unique_id=453037944 instance=ExtResource("2")]
+color = "red"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_cvlyw")

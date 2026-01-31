@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://348nsfm54yrl"]
+
+[ext_resource type="PackedScene" uid="uid://d0bsiknlebs18" path="res://Scenes/Dot.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://bnnf3egk6s7a" path="res://Match3/Extra.png" id="2_t8ngr"]
+
+[node name="pink_dot" unique_id=1565932827 instance=ExtResource("2")]
+color = "pink"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_t8ngr")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3n5jeip7lmtg"
+path="res://.godot/imported/Scene 2 Desa.ogg-2373597fb6aa01e37bacf412b03a7b09.oggvorbisstr"
+
+[deps]
+
+source_file="res://Match3/Scene 2 Desa.ogg"
+dest_files=["res://.godot/imported/Scene 2 Desa.ogg-2373597fb6aa01e37bacf412b03a7b09.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
